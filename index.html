@@ -117,6 +117,7 @@
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
+      
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#evento" class="nav-link scrollto" active><i class="bx bx-calendar-event"></i> <span>Eventos</span></a></li>
@@ -630,15 +631,15 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body" id="Cerrarmodal">
-				<form  method="post">
+				<form name="login">
 					<div class="form-group">
-						<input type="email" class="form-control" name="email" placeholder="Correo" required="required">		
+						<input type="email" class="form-control" name="userid" placeholder="Correo" required="required">		
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">	
+						<input type="password" class="form-control" name="pswrd" placeholder="Contraseña" required="required">	
 					</div>        
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Entrar</button>
+						<button type="submit" onclick="check(this.form)" class="btn btn-primary btn-lg btn-block login-btn">Entrar</button>
 					</div>  
           <div class="form-group" align="right">
             <a href="#">Olvidaste tu contraseña</a>
@@ -653,7 +654,7 @@
 			</div>
 		</div>
 	</div>
-</div>   
+</div>
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -670,6 +671,18 @@
     $('#Cerrarmodal').on('hidden.bs.modal', function () {
       
     });
+  </script>
+  <script language="javascript">
+      function check(form)
+      {
+      if(form.userid.value == "usuario@usuario.cl" && form.pswrd.value == "usuario")
+        {
+          alert("Login Correcto!!! Bienvenido Usuario")
+        }
+      else
+      {
+        alert("Usuario o Contraseña incorrecto!!!")
+      }
   </script>
 </body>
 </html>
